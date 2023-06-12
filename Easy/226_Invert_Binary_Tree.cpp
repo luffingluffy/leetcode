@@ -16,18 +16,18 @@ class Solution {
         if (root == nullptr) {
             return nullptr;
         }
-        priority_queue<TreeNode*> pq;
-        pq.push(root);
-        while (!pq.empty()) {
-            TreeNode* curr = pq.top();
-            pq.pop();
+        queue<TreeNode*> q;
+        q.push(root);
+        while (!q.empty()) {
+            TreeNode* curr = q.top();
+            q.pop();
 
             TreeNode* temp = curr->left;
             curr->left = curr->right;
             curr->right = temp;
 
-            if (curr->left != nullptr) pq.push(curr->left);
-            if (curr->right != nullptr) pq.push(curr->right);
+            if (curr->left != nullptr) q.push(curr->left);
+            if (curr->right != nullptr) q.push(curr->right);
         }
 
         return root;
