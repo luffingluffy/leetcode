@@ -1,3 +1,4 @@
+// Top down:
 class Solution {
    public:
     const int INF = 1e9;
@@ -23,5 +24,24 @@ class Solution {
 
         memo[amount] = ans;
         return memo[amount];
+    }
+};
+
+// Bottom up:
+class Solution {
+   public:
+    int coinChange(vector<int>& coins, int amount) {
+        vector<int> memo(amount + 1, 1e6);
+        memo[0] = 0;
+
+        for (int i = 1; i <= amount; i++) {
+            for (int j = 0; j < coins.size(); j++) {
+                if (coins[j] <= i) {
+                    memo[i] = min(memo[i], 1 + memo[i - coins[j]]);
+                }
+            }
+        }
+
+        return memo[amount] == 1e6 ? -1 : memo[amount];
     }
 };
