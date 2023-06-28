@@ -4,7 +4,18 @@
 
 1. When processing an array that requires checking the next index to determine what to do with the current index, try doing from the end of the array.
 2. Think about processing array problems from the back in general.
-3. Use 2 pointers approach if there are 2 strings to be compared.  
+3. If array is sorted, try using 2 pointers approach.
+4. transform(v.begin(), v.end(), v.begin(), function) applies a function to each element in a container.
+5. accumulate(v.begin(), v.begin(), 0) sums up all the elements in a container.  
+
+## Strings
+
+1. stoi(str, idx/nullptr, base) converts str to an integer with the specified base.  
+2. Use 2 pointers approach if there are 2 strings to be compared.  
+
+## Trees
+
+1. Pre-order/post-order Traversal with markers (#) for null node unique determines a Binary Tree after inserting a character before/after the root node.
 
 ## Bit Manipulation
 
@@ -19,6 +30,3 @@
 3. Get last digit of int x: x % 10
 4. Remove last digit of int x: x / 10  
 
-## String
-
-1. stoi(str, idx/nullptr, base) converts str to an integer with the specified base.  
