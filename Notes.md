@@ -7,6 +7,7 @@
 3. If array is sorted, try using 2 pointers approach.
 4. transform(v.begin(), v.end(), v.begin(), function) applies a function to each element in a container.
 5. accumulate(v.begin(), v.begin(), 0) sums up all the elements in a container.  
+6. Be careful when adding to an array when looping over it as it'll cause an infinite cycle.
 
 ## Strings
 
